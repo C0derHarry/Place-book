@@ -4,10 +4,11 @@ import {
   Route,
   Redirect,
   Switch,
-} from "react-router-dom/cjs/react-router-dom.min";
+} from "react-router-dom";
 
 import Users from "./user/pages/users";
-import NewPlace from "./places/pages/places";
+import NewPlace from "./places/pages/newPlace";
+import UserPlaces from "./places/pages/userPlaces";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 const App = () => {
@@ -18,6 +19,9 @@ const App = () => {
         <Switch>
           <Route path="/" exact>
             <Users />
+          </Route>
+          <Route path="/:userID/places" exact>
+            <UserPlaces />
           </Route>
           <Route path="/places/new" exact>
             <NewPlace />
