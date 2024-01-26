@@ -29,7 +29,6 @@ const PlaceList = (props) => {
           coordinates={place.location}
         />
       ))}
-      ;
     </ul>
   );
 };
