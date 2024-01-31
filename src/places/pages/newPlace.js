@@ -58,8 +58,13 @@ const NewPlace = () => {
     });
   }, []);
 
+  const placeSubmitHandler = (event) => {
+    event.preventDefault();
+    console.log(formState.inputs);
+  };
+
   return (
-    <form className="place-form">
+    <form className="place-form" onSubmit={placeSubmitHandler}>
       <Input
         id="title"
         element="input"
@@ -75,6 +80,14 @@ const NewPlace = () => {
         label="Iss jga ke baare kucch likh (accha sa haan, bura likha toh maarunga)"
         validators={[VALIDATOR_MINLENGTH(5)]}
         errorText="Kucch toh daal bhai mtlb khali chhod dega?"
+        onInput={inputHandler}
+      />
+      <Input
+        id="address"
+        element="input"
+        label="address daaliye"
+        validators={[VALIDATOR_REQUIRE()]}
+        errorText="Khali nhi chhodne ka!"
         onInput={inputHandler}
       />
       <Button type="submit" disabled={!formState.isValid}>
