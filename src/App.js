@@ -4,12 +4,12 @@ import {
   Route,
   Redirect,
   Switch,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 import Users from "./user/pages/users";
 import NewPlace from "./places/pages/newPlace";
-import UpdatePlace from "./places/pages/updatePlace";
 import UserPlaces from "./places/pages/userPlaces";
+import UpdatePlace from "./places/pages/updatePlace";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/places/new" exact>
             <NewPlace />
           </Route>
-          <Route path="/places/:placeId" exact>
+          <Route path="/places/:placeID">
             <UpdatePlace />
           </Route>
           <Redirect to="/" />
